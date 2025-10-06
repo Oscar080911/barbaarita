@@ -188,7 +188,7 @@ button:hover { background-color: rgba(100,100,100,0.8); }
 <div id="polaris">★</div>
 
 <audio id="musicPlayer" loop>
-  <source src="audio/NoFueRemix.mp3" type="audio/mpeg">
+  <source src="audio/Nofueremix.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -232,22 +232,16 @@ document.addEventListener('DOMContentLoaded', () => {
     promiseBox.style.display = 'block';
   });
 
+  // Reproducción de música **solo con botón**
   musicBtn.addEventListener('click', () => {
     if (musicPlayer.paused) {
-      musicPlayer.play().catch(e => console.log('Error al reproducir:', e));
+      musicPlayer.play().catch(e => console.log('No se pudo reproducir la música:', e));
     } else {
       musicPlayer.pause();
     }
   });
 
-  document.addEventListener('click', function iniciarMusica() {
-    if (musicPlayer.paused) {
-      musicPlayer.play().catch(e => console.log('Error al reproducir automáticamente:', e));
-    }
-    document.removeEventListener('click', iniciarMusica);
-  });
-
-  // Crear estrellas flotantes por toda la pantalla con parpadeo aleatorio
+  // Crear estrellas flotantes
   function crearEstrellas() {
     const total = 100;
     const screenWidth = window.innerWidth;
@@ -277,6 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+
 
 
 
